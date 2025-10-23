@@ -50,9 +50,15 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return 
-}
+  // Проверка на очень большие числа с Number.isFinite
+  if (!Number.isFinite(value1) || !Number.isFinite(value2)) {
+    // Если числа слишком большие, используем альтернативный расчет
+    return value1 / 2 + value2 / 2;
+  }
 
+  // Стандартный расчет для нормальных чисел
+  return (value1 + value2) / 2;
+}
 /**
  * Returns a distance between two points by cartesian coordinates.
  *
